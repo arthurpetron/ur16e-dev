@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="eSeries_UR16e_14012020_URDF">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="8.0383E-05 0.059278 -0.0015073"
+        rpy="0 0 0" />
+      <mass
+        value="3.4522" />
+      <inertia
+        ixx="0.0090791"
+        ixy="7.3607E-06"
+        ixz="2.2923E-06"
+        iyy="0.013921"
+        iyz="-0.00022255"
+        izz="0.010161" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eSeries_UR16e_14012020_URDF/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eSeries_UR16e_14012020_URDF/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Shoulder1">
+    <inertial>
+      <origin
+        xyz="-8.131E-07 0.082255 0.013094"
+        rpy="0 0 0" />
+      <mass
+        value="7.369" />
+      <inertia
+        ixx="0.063313"
+        ixy="-5.9582E-07"
+        ixz="1.0885E-06"
+        iyy="0.05364"
+        iyz="-0.0010264"
+        izz="0.056122" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eSeries_UR16e_14012020_URDF/meshes/Shoulder1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.289 0.12 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eSeries_UR16e_14012020_URDF/meshes/Shoulder1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0993"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Shoulder1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="0"
+      velocity="2.094" />
+    <dynamics
+      damping="1.5"
+      friction="1" />
+    <safety_controller
+      soft_upper="6"
+      soft_lower="-6"
+      k_velocity="2.094" />
+  </joint>
+  <link
+    name="Shoulder2">
+    <inertial>
+      <origin
+        xyz="-4.978E-08 0.18974 0.081646"
+        rpy="0 0 0" />
+      <mass
+        value="10.45" />
+      <inertia
+        ixx="1.2886"
+        ixy="-1.0341E-05"
+        ixz="3.634E-07"
+        iyy="0.093069"
+        iyz="0.0026098"
+        izz="1.2766" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eSeries_UR16e_14012020_URDF/meshes/Shoulder2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.85 0.12 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eSeries_UR16e_14012020_URDF/meshes/Shoulder2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J2"
+    type="revolute">
+    <origin
+      xyz="0 0.0814 0.0946"
+      rpy="0 0 1.5708" />
+    <parent
+      link="Shoulder1" />
+    <child
+      link="Shoulder2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="0"
+      velocity="2.094" />
+    <dynamics
+      damping="1.5"
+      friction="1" />
+    <safety_controller
+      soft_upper="6"
+      soft_lower="-6"
+      k_velocity="2.094" />
+  </joint>
+  <link
+    name="Elbow">
+    <inertial>
+      <origin
+        xyz="-1.5433E-05 0.16483 -0.048444"
+        rpy="0 0 0" />
+      <mass
+        value="4.321" />
+      <inertia
+        ixx="0.30179"
+        ixy="-2.5582E-05"
+        ixz="-7.3404E-06"
+        iyy="0.023157"
+        iyz="0.016558"
+        izz="0.29799" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eSeries_UR16e_14012020_URDF/meshes/Elbow.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.9 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eSeries_UR16e_14012020_URDF/meshes/Elbow.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J3"
+    type="revolute">
+    <origin
+      xyz="0 0.4784 0"
+      rpy="0 0 0" />
+    <parent
+      link="Shoulder2" />
+    <child
+      link="Elbow" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="0"
+      velocity="3.141" />
+    <dynamics
+      damping="1.5"
+      friction="1" />
+    <safety_controller
+      soft_upper="6"
+      soft_lower="-6"
+      k_velocity="3.141" />
+  </joint>
+  <link
+    name="Wrist1">
+    <inertial>
+      <origin
+        xyz="6.1842E-06 0.0015493 0.063631"
+        rpy="0 0 0" />
+      <mass
+        value="2.18" />
+      <inertia
+        ixx="0.008219"
+        ixy="1.0802E-07"
+        ixz="1.8391E-07"
+        iyy="0.0067972"
+        iyz="-0.00020953"
+        izz="0.0059858" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eSeries_UR16e_14012020_URDF/meshes/Wrist1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.07 0.2 0.8 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eSeries_UR16e_14012020_URDF/meshes/Wrist1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J4"
+    type="revolute">
+    <origin
+      xyz="0 0.36 0"
+      rpy="0 0 1.5708" />
+    <parent
+      link="Elbow" />
+    <child
+      link="Wrist1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="0"
+      velocity="3.141" />
+    <dynamics
+      damping="1"
+      friction="1" />
+    <safety_controller
+      soft_upper="6"
+      soft_lower="-6"
+      k_velocity="3.141" />
+  </joint>
+  <link
+    name="Wrist2">
+    <inertial>
+      <origin
+        xyz="1.976E-07 0.1069 0.0017385"
+        rpy="0 0 0" />
+      <mass
+        value="2.033" />
+      <inertia
+        ixx="0.0064896"
+        ixy="-1.1566E-07"
+        ixz="-5.9406E-08"
+        iyy="0.0055298"
+        iyz="-0.00016722"
+        izz="0.0050727" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eSeries_UR16e_14012020_URDF/meshes/Wrist2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.12 0 0.4 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eSeries_UR16e_14012020_URDF/meshes/Wrist2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J5"
+    type="revolute">
+    <origin
+      xyz="0 0.0033422 0.07955"
+      rpy="0 0 0" />
+    <parent
+      link="Wrist1" />
+    <child
+      link="Wrist2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="0"
+      velocity="3.141" />
+    <dynamics
+      damping="1.5"
+      friction="1" />
+    <safety_controller
+      soft_upper="6"
+      soft_lower="-6"
+      k_velocity="3.141" />
+  </joint>
+  <link
+    name="Wrist3">
+    <inertial>
+      <origin
+        xyz="5.5566E-10 -7.868E-05 0.027763"
+        rpy="0 0 0" />
+      <mass
+        value="0.907" />
+      <inertia
+        ixx="0.0011921"
+        ixy="-6.8485E-11"
+        ixz="2.3129E-11"
+        iyy="0.0011964"
+        iyz="2.3325E-07"
+        izz="0.0015671" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eSeries_UR16e_14012020_URDF/meshes/Wrist3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0 0.32 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://eSeries_UR16e_14012020_URDF/meshes/Wrist3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J6"
+    type="revolute">
+    <origin
+      xyz="0 0.11651 0.0569"
+      rpy="0 0 0" />
+    <parent
+      link="Wrist2" />
+    <child
+      link="Wrist3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="0"
+      velocity="3.141" />
+    <dynamics
+      damping="1.5"
+      friction="1" />
+    <safety_controller
+      soft_upper="6"
+      soft_lower="-6"
+      k_velocity="3.141" />
+  </joint>
+</robot>
